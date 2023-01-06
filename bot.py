@@ -1,10 +1,14 @@
-# usr/bin/env python3
+#!/usr/bin/env python3
 import random
 import logging
 from _token import token
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
+try:
+    import settings
+except ImportError:
+    exit('Do copy settings.py.default settings.py and set token')
 
 group_id = 218052091
 
@@ -55,7 +59,7 @@ class Bot:
         """
         Отправляет сообщение назад, если сообщение текстовое
 
-        :param event: TODO
+        :param event: VkBotMessageEvent object
         :return: None
         """
         if event.type == VkBotEventType.MESSAGE_NEW:
@@ -71,5 +75,5 @@ class Bot:
 
 if __name__ == '__main__':
     configure_logging()
-    bot = Bot(group_id, token)
+    bot = Bot(settings.GROUP_ID, settings.TOKEN)
     bot.run()
