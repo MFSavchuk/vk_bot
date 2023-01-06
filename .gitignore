@@ -1,4 +1,5 @@
-.idea/
+.idea
 settings.py
-bot.log
+__pycache__
 venv
+*.log

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import random
 import logging
-from _token import token
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
@@ -35,6 +34,7 @@ class Bot:
 
     Use python3.8
     """
+
     def __init__(self, group_id, token):
         """
 
