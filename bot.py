@@ -9,8 +9,6 @@ try:
 except ImportError:
     exit('Do copy settings.py.default settings.py and set token')
 
-group_id = 218052091
-
 log = logging.getLogger("bot")
 
 
