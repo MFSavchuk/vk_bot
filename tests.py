@@ -70,3 +70,6 @@ class Test1(TestCase):
             random_id=ANY,
             peer_id=self.RAW_EVENT['object']['message']['peer_id']
         )
+
+# coverage run --source=bot -m unittest
+# coverage report -m
