@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import random
 import logging
-import vk_api
+from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 try:
@@ -41,7 +41,7 @@ class Bot:
         """
         self.group_id = group_id
         self.token = token
-        self.vk = vk_api.VkApi(token=token)
+        self.vk = VkApi(token=token)
         self.api = self.vk.get_api()
         self.long_poller = VkBotLongPoll(self.vk, self.group_id)
 
